@@ -7,7 +7,7 @@
   <meta name="description" content="Explora el menú de CaféU y prepara tu pedido.">
   <title>CaféU — Café de campus</title>
   <link rel="stylesheet" href="styles.css">
-  <script type="module" src="src/app.js"></script>
+  <script type="module" src="src/main.js"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Saltar al contenido</a>
@@ -36,6 +36,7 @@
   <aside id="cart-panel" class="cart-panel" aria-labelledby="cart-title" aria-modal="true" role="dialog" aria-hidden="true" inert>
     <div class="cart-header"><div><p class="eyebrow">Tu selección</p><h2 id="cart-title">Mi pedido</h2></div><button id="close-cart" class="icon-button" type="button" aria-label="Cerrar pedido">×</button></div>
     <div id="cart-items" class="cart-items"></div>
+    <div id="cart-undo" class="cart-undo" role="status" aria-live="polite" hidden></div>
     <div id="cart-empty" class="cart-empty"><span aria-hidden="true">🥐</span><p>Tu pedido está esperando algo rico.</p><button id="browse-menu" class="text-link" type="button">Explorar el menú ↗</button></div>
     <div id="cart-summary" class="cart-summary" hidden><div class="total-row"><span>Total</span><strong id="cart-total" aria-live="polite" aria-atomic="true">$0,00</strong></div><button id="checkout" class="button button-dark button-full" type="button">Confirmar pedido <span aria-hidden="true">→</span></button><p class="checkout-note">El pago se realiza en cafetería.</p></div>
   </aside>
