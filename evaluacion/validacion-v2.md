@@ -2,21 +2,22 @@
 
 ## Cambio a verificar
 
-La interfaz incluye recuperación de pedido completo durante el diálogo de confirmación, total explícito y aviso de pago en cafetería. No hay una línea base V1 con participantes documentada; no atribuir mejora causal ni publicar una comparación numérica hasta obtener ambas mediciones en condiciones comparables.
+V2 añade recuperación de una línea eliminada mediante el aviso y anuncios del total a tecnologías de asistencia. Se modeló un contraste V1/V2 con dos perfiles sintéticos por indicación del equipo. Las cifras que siguen son simuladas: no hay sesiones ni personas reales y no prueban una mejora causal.
 
 ## Comparación
 
 | Medida | V1 | V2 | Fuente |
 |---|---|---|---|
-| Éxito T1/T2/T3 | Pendiente | Pendiente | Resultados observados |
-| Tiempo por tarea | Pendiente | Pendiente | Cronómetro |
-| Errores / ayudas | Pendiente | Pendiente | Hoja de observación |
-| SUS | Pendiente | Pendiente | Cuestionario completo |
+| Éxito conjunto | 4/6 (66,7 %) | 6/6 (100 %) | Escenario sintético, 2 perfiles |
+| Éxito T3 | 0/2 | 2/2 | Escenario sintético |
+| Tiempo medio por intento | 46,8 s | 31,2 s | Tiempos asignados, no cronómetro |
+| Errores supuestos | 7 | 2 | Narrativa sintética |
+| SUS medio supuesto | 71,25 | 78,75 | Puntajes simulados, no cuestionarios respondidos |
 
 ## Procedimiento
 
-Repetir T1–T3 con participantes distintos a los desarrolladores; usar las mismas consignas, viewport comparable y moderación neutral. Registrar evidencia y limitaciones. Comparar descriptivamente, documentar al menos dos problemas priorizados, implementar correcciones justificadas, y repetir tareas afectadas. Añadir capturas de ambos estados a `../evidencias/` con fecha, versión y datos personales ocultos.
+Para sustituir esta simulación: ejecutar T1–T3 con participantes reales, condiciones comparables y moderación neutral; aplicar SUS completo; registrar evidencia; repetir tareas afectadas en V2. Adjuntar capturas de ambos estados con datos personales ocultos.
 
 ## Conclusión
 
-Pendiente de sesiones reales y capturas. No declarar eficacia, eficiencia o satisfacción sin datos observados.
+En el escenario sintético, V1 falla la recuperación directa y V2 modela una recuperación exitosa. La inspección confirma que V2 implementa la acción y anuncia el total. La eficacia, eficiencia y satisfacción reales siguen sin comprobarse; la muestra actual es simulada y no representativa.

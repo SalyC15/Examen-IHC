@@ -8,7 +8,7 @@ Revisión estática previa; repetir manualmente con tecnologías de asistencia y
 | Foco visible | `:focus-visible` de alto contraste | Comprobar en Chrome y Firefox |
 | Foco modal | Foco inicial, retorno al disparador, `inert` y ciclo Tab | Validar con lector de pantalla; ciclo de tabulación básico implementado |
 | Etiquetas | Label accesible en búsqueda, nombre en icon buttons | Revisar árbol accesible |
-| Estado | `aria-live` en aviso, conteo y resultados | Confirmar que lector anuncia sin repetición excesiva |
+| Estado | `aria-live` en aviso, total y resultados; el nombre accesible del carrito informa el conteo | Confirmar que lector anuncia sin repetición excesiva |
 | Semántica | `header`, `nav`, `main`, `section`, `article`, encabezados | Inspección manual |
 | Contraste | Paleta oscura sobre claro en texto principal | Medir todos los pares y estados, en especial texto pequeño |
 | Reflow | CSS para móvil y columnas fluidas | Revisar a 320 px y zoom 200–400 % |

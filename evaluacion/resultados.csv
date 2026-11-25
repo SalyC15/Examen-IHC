@@ -1,7 +1,13 @@
-participante,tarea,exito,tiempo_segundos,errores,ayudas,sus_puntuacion,nota
-P01,T1,,,,,,Pendiente de sesión real
-P01,T2,,,,,,Pendiente de sesión real
-P01,T3,,,,,,Pendiente de sesión real
-P02,T1,,,,,,Pendiente de sesión real
-P02,T2,,,,,,Pendiente de sesión real
-P02,T3,,,,,,Pendiente de sesión real
+modalidad,participante,version,tarea,exito,tiempo_segundos,errores,ayudas,sus_puntuacion,nota
+SIMULACION,P01,V1,T1,si,24,0,0,,Encuentra latte en catálogo
+SIMULACION,P01,V1,T2,si,21,0,0,,Cambia cantidad y lee total
+SIMULACION,P01,V1,T3,no,90,2,0,70,"Elimina latte; no encuentra cómo recuperarlo antes del límite"
+SIMULACION,P02,V1,T1,si,31,1,0,,Revisa una categoría antes de localizar latte
+SIMULACION,P02,V1,T2,si,25,1,0,,Duda sobre si el total cambió tras ajustar cantidad
+SIMULACION,P02,V1,T3,no,90,3,0,72.5,"Elimina latte; busca cómo recuperarlo y termina en límite"
+SIMULACION,P01,V2,T1,si,22,0,0,,Latte localizado y añadido
+SIMULACION,P01,V2,T2,si,19,0,0,,Total leído después del cambio
+SIMULACION,P01,V2,T3,si,43,1,0,82.5,"Usa Deshacer en aviso y confirma ambos artículos"
+SIMULACION,P02,V2,T1,si,28,0,0,,Localiza latte con búsqueda
+SIMULACION,P02,V2,T2,si,23,0,0,,Detecta total actualizado
+SIMULACION,P02,V2,T3,si,52,1,0,75,"Primero no percibe el total anunciado; consulta el resumen antes de confirmar"
