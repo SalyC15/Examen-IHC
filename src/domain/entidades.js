@@ -3,11 +3,11 @@
 export class ErrorDominio extends Error {}
 
 /** Producto del catálogo. Inmutable una vez creado. */
-export function crearProducto({ id, name, description = '', price, category, tag = '', emoji = '', tone = '' }) {
+export function crearProducto({ id, name, description = '', price, category, tag = '', image = '', tone = '' }) {
   if (!id || !name) throw new ErrorDominio('El producto necesita id y nombre.');
   if (!Number.isFinite(price) || price <= 0) throw new ErrorDominio(`Precio inválido para ${name}.`);
   if (!category) throw new ErrorDominio(`Categoría requerida para ${name}.`);
-  return Object.freeze({ id, name, description, price, category, tag, emoji, tone });
+  return Object.freeze({ id, name, description, price, category, tag, image, tone });
 }
 
 /** Cantidad válida: entero positivo. */
