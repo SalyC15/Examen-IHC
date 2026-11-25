@@ -1,51 +1,74 @@
 # CaféU 2.0
 
-Aplicación web responsive para consultar el menú y armar un pedido de cafetería universitaria. Proyecto académico de Interacción Humano-Computador.
+Aplicación web responsive para consultar el menú de la cafetería universitaria, armar un pedido y recibir una confirmación. Prueba práctica integradora de Interacción Humano‑Computador (UTA · FISEI · Ingeniería de Software).
 
-## Ejecutar
+## Integrantes y aportes
 
-Abrir `index.html` en un navegador moderno. No requiere instalación ni conexión. Los productos, el carrito y los pedidos se guardan en `localStorage` de este navegador.
+| Integrante (GitHub) | Aportes principales |
+|---|---|
+| SalyC15 | Base UX y arquitectura inicial, flujo de pedido V1, documentación de IA y prototipos, recuperación de líneas, capa de presentación y backlog |
+| Hlagua | Capa de aplicación (casos de uso), aviso de estado corrupto, README |
+| Itsuna18 | Capa de dominio (Producto, Pedido, DetallePedido), pruebas automatizadas T1–T3, evidencias antes/después |
+| carlitosgiovanniramos | Capa de infraestructura (repositorios), CSS Mobile First y correcciones de accesibilidad, documentación de arquitectura y trazabilidad |
 
-## Funcionalidades
+El detalle verificable está en el historial de commits (`git log --format='%an %s'`).
 
-- Catálogo por categorías y búsqueda sin distinguir mayúsculas, tildes ni caracteres Unicode equivalentes.
-- Añadir productos, modificar cantidades, ver subtotales y total, y quitar elementos.
-- Recuperar una línea recién eliminada con la acción temporal “Deshacer”; deshacer también un pedido confirmado.
-- Diseño adaptable, navegación por teclado, etiquetas accesibles y mensajes de estado anunciados.
+## Instalación
 
-## Arquitectura
+Solo se necesita un navegador moderno y, para servir la app y ejecutar las pruebas, [Node.js](https://nodejs.org/) 18 o superior. No hay dependencias que instalar.
 
-Aplicación estática sin dependencias: `index.html` aporta estructura semántica, `styles.css` la presentación y `src/app.js` el estado y los casos de uso. `src/products.js` contiene datos del catálogo. La capa de infraestructura persiste estado en localStorage. El detalle está en [docs/arquitectura.md](docs/arquitectura.md).
+```bash
+git clone https://github.com/SalyC15/Examen-IHC.git
+cd Examen-IHC
+```
+
+## Ejecución
+
+Los módulos ES no se cargan desde `file://`, así que la app se sirve en local:
+
+```bash
+npm start          # servidor estático sin dependencias → http://localhost:5173
+```
+
+Alternativa: `python -m http.server 5173`. El carrito y el último pedido se guardan en `localStorage` del navegador.
 
 ## Pruebas
 
-Ejecutar `npm test` para las pruebas funcionales del dominio, o abrir `tests/index.html` en un navegador. La guía de aceptación está en `evaluacion/tareas.md`.
+```bash
+npm test           # node --test: 14 pruebas (dominio + casos de uso T1, T2, T3 + persistencia)
+```
+
+También se pueden abrir en el navegador: `http://localhost:5173/tests/pruebas-automatizadas/`.
+
+## Arquitectura
+
+Cuatro capas en `src/`: **presentation** (pantallas, componentes, accesibilidad) → **application** (casos de uso) → **domain** (Producto, Pedido, DetallePedido y reglas) ← **infrastructure** (repositorio del catálogo y LocalStorage). `src/main.js` compone las capas. Detalle y dependencias en [docs/arquitectura.md](docs/arquitectura.md).
+
+## Funcionalidades
+
+- Catálogo por categorías y búsqueda tolerante a tildes y mayúsculas.
+- Añadir productos, modificar cantidades (+/−), subtotales y total calculados en el dominio.
+- Quitar una línea y recuperarla con “Deshacer” dentro del panel (accesible con teclado).
+- Confirmar el pedido (no se permite vacío) con número y resumen; deshacer la confirmación.
+- Mobile First (375 / 768 / 1280 px), HTML semántico, navegación por teclado, foco visible, contraste AA y mensajes anunciados.
+- Persistencia en LocalStorage con aviso si el estado guardado está dañado.
 
 ## Alcance y limitaciones
 
-Es un prototipo local, no procesa pagos ni transmite pedidos a una cafetería. Los datos persisten solo en el mismo navegador. No hay backend, autenticación ni inventario en tiempo real. La carpeta de evaluación contiene una simulación sintética solicitada por el equipo; no son resultados de participantes reales y deben sustituirse si se realizan sesiones.
+- Prototipo local: no procesa pagos, no envía pedidos a la cafetería, no tiene backend, autenticación ni inventario.
+- Los datos persisten solo en el mismo navegador.
+- **Evaluación con usuarios:** `evaluacion/resultados.csv` y `evidencias/observacion.csv` contienen filas marcadas `SIMULACION`. La rúbrica no acepta resultados simulados; deben sustituirse por sesiones P01/P02 reales con consentimiento antes de la entrega. Las comprobaciones heurísticas, de accesibilidad y técnicas V1/V2 sí son reales y reproducibles.
+- Con 2 participantes las métricas son descriptivas y no generalizables.
 
-## Documentación de IHC
+## Evidencias y documentación
 
-- [Análisis de usuario y contexto](docs/analisis-ux.md)
-- [Requisitos, mapa y flujo](docs/requisitos.md)
-- [Sitemap](docs/sitemap.md)
-- [User flow](docs/user-flow.md)
-- [Trazabilidad](docs/trazabilidad.md)
-- [Arquitectura](docs/arquitectura.md)
-- [Wireframes](prototipos/wireframes.md)
-- [Plan de evaluación](evaluacion/plan.md)
-- [Tareas y protocolo](evaluacion/tareas.md)
-- [Registro del piloto P00](evaluacion/piloto.md)
-- [Consentimiento](evaluacion/consentimiento.md)
-- [Evaluación heurística](evaluacion/heuristicas.md)
-- [Recorrido cognitivo](evaluacion/recorrido-cognitivo.md)
-- [Accesibilidad](evaluacion/accesibilidad.md)
-- [Registro de resultados](evaluacion/resultados.csv)
-- [Métricas](evaluacion/metricas.md)
-- [Hallazgos y backlog](evaluacion/hallazgos.md)
-- [Validación V2](evaluacion/validacion-v2.md)
-
-## Evidencia
-
-La carpeta `evidencias/` contiene registros marcados como simulación. Reemplazarlos por observaciones reales únicamente si se llevan a cabo sesiones con consentimiento.
+| Actividad | Documentos |
+|---|---|
+| 1. Análisis UX | [analisis-ux.md](docs/analisis-ux.md) (persona, touchpoints, momentos de verdad, curva emocional, matriz Nielsen/Gestalt) |
+| 2. Requisitos e IA | [requisitos.md](docs/requisitos.md), [sitemap.md](docs/sitemap.md), [user-flow.md](docs/user-flow.md), [trazabilidad.md](docs/trazabilidad.md) |
+| Prototipos | [wireframes.md](prototipos/wireframes.md), [version-v1](prototipos/version-v1/README.md) |
+| 3. Arquitectura | [arquitectura.md](docs/arquitectura.md), [src/](src), [tests/pruebas-automatizadas/](tests/pruebas-automatizadas) |
+| 4. Planificación | [plan.md](evaluacion/plan.md), [tareas.md](evaluacion/tareas.md), [consentimiento.md](evaluacion/consentimiento.md), [sus.md](evaluacion/sus.md) |
+| 5. Heurística y accesibilidad | [heuristicas.md](evaluacion/heuristicas.md), [recorrido-cognitivo.md](evaluacion/recorrido-cognitivo.md), [accesibilidad.md](evaluacion/accesibilidad.md) |
+| 6. Pilotaje y usuarios | [piloto.md](evaluacion/piloto.md), [resultados.csv](evaluacion/resultados.csv), [observacion.csv](evidencias/observacion.csv) |
+| 7. Triangulación y validación | [metricas.md](evaluacion/metricas.md), [hallazgos.md](evaluacion/hallazgos.md), [backlog.md](evaluacion/backlog.md), [validacion-v2.md](evaluacion/validacion-v2.md), [evidencias/](evidencias/README.md) (antes / después) |
