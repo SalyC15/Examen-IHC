@@ -6,7 +6,7 @@ Comprobar si estudiantes pueden localizar, modificar y confirmar una compra brev
 
 ## Participantes y ética
 
-Invitar idealmente a tres estudiantes del público objetivo que no hayan desarrollado la solución. Esta es una meta, no una muestra ya reclutada. Obtener consentimiento informado, participación voluntaria, opción de abandonar y permiso separado antes de grabar. No recoger nombres; usar códigos P01/P02/P03. No entregar los pedidos como compras reales: es un escenario de prototipo local.
+Esta entrega reporta una **simulación académica solicitada por el equipo**, no sesiones reales ni estudiantes reclutados. Para sesiones reales, invitar idealmente a tres estudiantes del público objetivo que no hayan desarrollado la solución. Obtener consentimiento informado, participación voluntaria, opción de abandonar y permiso separado antes de grabar. No recoger nombres; usar códigos P01/P02/P03. No entregar los pedidos como compras reales: es un escenario de prototipo local.
 
 ## Protocolo
 
@@ -23,7 +23,7 @@ Invitar idealmente a tres estudiantes del público objetivo que no hayan desarro
 |---|---|---|
 | T1 | “Tienes unos minutos antes de clase. Encuentra un latte y añádelo a tu pedido.” | Latte agregado sin ayuda |
 | T2 | “Decides pedir dos y quieres saber el total. Ajusta tu pedido.” | Cantidad 2 y total correcto, sin ayuda |
-| T3 | “Cambias de opinión y quieres retirar el latte. Después confirma el pedido que quede.” | Latte retirado; confirmación corresponde al carrito |
+| T3 | Con latte y espresso en el carrito: “Retira el latte por un momento. Te das cuenta de que querías conservarlo; recupéralo y confirma el pedido.” | Recupera la línea, conserva ambos artículos y confirma el total correcto |
 
 ## Instrumentos
 

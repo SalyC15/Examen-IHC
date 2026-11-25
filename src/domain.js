@@ -18,3 +18,7 @@ export function cartSummary(cart, products) {
     total: lines.reduce((sum, line) => sum + line.product.price * line.quantity, 0),
   };
 }
+
+export function restoreRemovedLine(cart, id, quantity) {
+  return { ...cart, [id]: (cart[id] || 0) + quantity };
+}

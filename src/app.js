@@ -1,5 +1,5 @@
 import { products, categories } from './products.js';
-import { filterProducts, cartSummary } from './domain.js';
+import { filterProducts, cartSummary, restoreRemovedLine } from './domain.js';
 
 const STORAGE_KEY = 'cafeu-v2-state';
 const money = new Intl.NumberFormat('es-EC', { style: 'currency', currency: 'USD' });
@@ -55,8 +55,21 @@ function renderCart() {
   ui.total.textContent = format(total);
 }
 
-function notify(message) {
-  ui.toast.textContent = message;
+function notify(message, undo) {
+  ui.toast.replaceChildren(document.createTextNode(message));
+  if (undo) {
+    const button = document.createElement('button');
+    button.className = 'toast-action';
+    button.type = 'button';
+    button.textContent = 'Deshacer';
+    button.setAttribute('aria-label', `${undo.label}; deshacer`);
+    button.addEventListener('click', () => {
+      undo.run();
+      ui.toast.classList.remove('is-visible');
+      clearTimeout(toastTimer);
+    }, { once: true });
+    ui.toast.append(' ', button);
+  }
   ui.toast.classList.add('is-visible');
   clearTimeout(toastTimer);
   toastTimer = setTimeout(() => ui.toast.classList.remove('is-visible'), 2600);
@@ -138,9 +151,14 @@ ui.items.addEventListener('click', (event) => {
   }
   if (removeButton) {
     const id = removeButton.dataset.remove;
-    const name = products.find((item) => item.id === id)?.name;
+    const line = cartSummary(state.cart, products).lines.find((item) => item.product.id === id);
+    const name = line?.product.name;
+    const quantity = line?.quantity ?? 0;
     delete state.cart[id]; save(); renderCart();
-    notify(`${name} eliminado del pedido`);
+    notify(`${name} eliminado del pedido.`, {
+      label: `${name} eliminado del pedido`,
+      run: () => { state.cart = restoreRemovedLine(state.cart, id, quantity); save(); renderCart(); notify(`${name} recuperado en el pedido.`); },
+    });
   }
 });
 $('#checkout').addEventListener('click', checkout);

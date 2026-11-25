@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { products } from '../src/products.js';
-import { cartSummary, filterProducts } from '../src/domain.js';
+import { cartSummary, filterProducts, restoreRemovedLine } from '../src/domain.js';
 
 test('filtra productos de la categoría seleccionada', () => {
   const coffee = filterProducts(products, 'Café', '');
@@ -25,4 +25,9 @@ test('ignora cantidades inválidas y productos desconocidos', () => {
   assert.deepEqual(cartSummary({ latte: -1, espresso: 1.5, missing: 4 }, products), {
     lines: [], count: 0, total: 0,
   });
+});
+
+test('recupera cantidades de una línea quitada del carrito', () => {
+  assert.deepEqual(restoreRemovedLine({ espresso: 1 }, 'latte', 2), { espresso: 1, latte: 2 });
+  assert.deepEqual(restoreRemovedLine({ latte: 1 }, 'latte', 2), { latte: 3 });
 });

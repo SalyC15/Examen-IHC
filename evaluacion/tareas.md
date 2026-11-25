@@ -10,7 +10,15 @@
 
 **T2 — Modificar (objetivo 60 s).** “Decides pedir dos y quieres saber el total. Ajusta tu pedido.” Éxito: cantidad dos, total visible y correcto, sin ayuda.
 
-**T3 — Retirar y confirmar (objetivo 90 s).** “Cambias de opinión y quieres retirar el latte. Después confirma el pedido que quede.” Éxito: latte ausente y diálogo describe el carrito restante. Si el participante no desea completar el flujo, registrar resultado parcial sin presionar.
+**T3 — Retirar, recuperar y confirmar (objetivo 90 s).** Preparar una unidad de latte y un espresso. Leer: “Retira el latte por un momento. Te das cuenta de que querías conservarlo; recupéralo y confirma el pedido.” Éxito: latte y espresso presentes; diálogo de confirmación muestra unidades y total correctos.
+
+## Estado inicial
+
+- **T1:** carrito vacío, búsqueda vacía y catálogo visible.
+- **T2:** una unidad de latte en el carrito; pedir que la cambie a dos.
+- **T3:** una unidad de latte y un espresso; el participante debe descubrir cómo quitar y recuperar la línea.
+
+Restablecer el estado antes de cada tarea. No dejar visible la preparación del moderador.
 
 ## Hoja por tarea
 
