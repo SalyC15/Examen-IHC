@@ -6,7 +6,7 @@ Comprobar si estudiantes pueden localizar, modificar y confirmar una compra brev
 
 ## Participantes y ética
 
-Esta entrega reporta una **simulación académica solicitada por el equipo**, no sesiones reales ni estudiantes reclutados. Para sesiones reales, invitar idealmente a tres estudiantes del público objetivo que no hayan desarrollado la solución. Obtener consentimiento informado, participación voluntaria, opción de abandonar y permiso separado antes de grabar. No recoger nombres; usar códigos P01/P02/P03. No entregar los pedidos como compras reales: es un escenario de prototipo local.
+Esta entrega reporta una **simulación académica**, no sesiones reales ni estudiantes reclutados. Según la indicación docente posterior comunicada por el equipo, se modela el escenario en vez de reclutar participantes; los perfiles P01/P02 son ficticios. Para una evaluación con personas, invitar estudiantes del público objetivo que no hayan desarrollado la solución, obtener consentimiento informado, participación voluntaria, opción de abandonar y permiso separado antes de grabar. No recoger nombres; usar códigos. No entregar los pedidos como compras reales: es un escenario de prototipo local.
 
 ## Protocolo
 

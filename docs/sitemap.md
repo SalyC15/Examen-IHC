@@ -10,6 +10,8 @@ Inicio
 ├── Mi pedido
 │   ├── Cambiar cantidad
 │   ├── Quitar producto
+│   ├── Cancelar pedido
+│   │   └── Deshacer cancelación
 │   └── Confirmar
 │       ├── Volver al menú
 │       └── Deshacer pedido

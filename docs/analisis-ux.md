@@ -36,6 +36,10 @@
 
 Hipótesis a validar, en escala de -2 (frustración) a +2 (satisfacción): la exploración genera interés; los errores de búsqueda o una cantidad difícil de corregir podrían bajar la emoción. Registrar la curva individual tras cada tarea; no presentarla como resultado observado.
 
+| Fase hipotética | Descubrimiento | Búsqueda | Selección | Revisión | Confirmación |
+|---|---:|---:|---:|---:|---:|
+| Emoción esperada (-2 a +2) | +1 | +1 | +2 | +1 | +2 |
+
 ## Matriz de problemas inicial
 
 | Problema hipotético | Principio relacionado | Respuesta de diseño | Evidencia pendiente |

@@ -4,7 +4,7 @@ Prioridad = severidad (0–4, Nielsen) × impacto en las tareas T1–T3. La fuen
 
 | Prioridad | ID | Problema | Fuente | Sev. | Tarea afectada | Acción | Estado |
 |---|---|---|---|---:|---|---|---|
-| 1 | H-01 | La recuperación de una línea eliminada no tenía salida clara | HE 3/5, RC T3, SIM | 3 | T3 | Acción Deshacer temporal | Cerrado en V2 (commit `feat: add undo…`) |
+| 1 | H-01 | La recuperación de una línea eliminada no tenía salida clara | HE 3/5, RC T3, SIM | 3 | T3 | Acción Deshacer temporal | Cerrado en V2 (commit `cae382c`, recuperación dentro del panel) |
 | 2 | H-03 | “Deshacer” vivía en el aviso flotante, fuera del panel modal con foco atrapado: no alcanzable con teclado y expiraba a los 2,6 s | A11Y, RC T3 paso 2 | 3 | T3 | Zona `#cart-undo` dentro del panel, recibe el foco y no expira | **Cerrado en V2** |
 | 3 | H-04 | El mensaje “Tu pedido está esperando algo rico” se mostraba junto a productos en el carrito (`display:grid` anulaba `hidden`) | HE 1/4, captura V1 | 3 | T2, T3 | Regla `[hidden]{display:none!important}` | **Cerrado en V2** |
 | 4 | H-05 | Seis pares de color bajo AA (texto atenuado 4,05:1; eyebrow 3,31:1; contador 2,58:1; anillo de foco 2,25:1) | A11Y | 2 | T1–T3 | Paleta ajustada y re‑medida | **Cerrado en V2** |

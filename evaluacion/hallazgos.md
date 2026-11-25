@@ -4,14 +4,14 @@
 
 Los hallazgos siguientes proceden de la **simulación sintética solicitada**, no de sesiones reales. Cada observación es parte del escenario modelado.
 
-| ID | Evidencia observada | Tarea | Severidad | Impacto | Estado |
+| ID | Evidencia del escenario simulado | Tarea | Severidad | Impacto modelado | Estado |
 |---|---|---|---:|---|---|
 | H-01 | En escenario P01/P02 V1, quitar latte deja la tarea de recuperación sin salida visible | T3 | 3 | Bloquea recuperar artículo eliminado; 0/2 éxitos modelados | Corregido en V2: acción Deshacer temporal en aviso |
 | H-02 | En escenario P02 V1, no percibe si cambió el total después de ajustar cantidad | T2 | 2 | Duda antes de confirmar, relevante para lector de pantalla | Corregido en V2: total usa `aria-live="polite"` |
 
 ## Hallazgos de inspección y verificación técnica (evidencia reproducible)
 
-Estos hallazgos no dependen de participantes: se reproducen abriendo V1 (commit `4e09297`) y se comparan con V2. Captura: `../evidencias/antes/` y `../evidencias/despues/`.
+Estos hallazgos no dependen de participantes: se reproducen abriendo V1 (commit `19d0b74`) y se comparan con V2. Capturas de la comparación guardadas en `../evidencias/antes/` y `../evidencias/despues/` (commit de evidencia `74631f1`).
 
 | ID | Evidencia | Heurística / criterio | Sev. | Corrección V2 |
 |---|---|---|---:|---|

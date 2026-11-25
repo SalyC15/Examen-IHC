@@ -22,7 +22,7 @@ Para sustituir esta simulación: ejecutar T1–T3 con participantes reales, cond
 
 Estas comprobaciones sí se ejecutaron sobre la interfaz y son reproducibles; complementan, pero no reemplazan, la medición con participantes.
 
-| Problema | Comprobación | V1 (commit `4e09297`) | V2 | Evidencia |
+| Problema | Comprobación | V1 (commit `19d0b74`) | V2 (commit de captura `74631f1`) | Evidencia |
 |---|---|---|---|---|
 | H-03 Deshacer con teclado | Quitar latte con el panel abierto; ¿dónde queda el foco y es alcanzable “Deshacer”? | Foco en “Cerrar”; Deshacer fuera del ciclo de Tab; expira 2,6 s | Foco en “Deshacer” dentro del panel; no expira | Chromium 375×812 |
 | H-04 Mensaje vacío contradictorio | Carrito con 1 producto: `display` de `#cart-empty` | `grid` (visible) | `none` | `evidencias/antes` vs `evidencias/despues` |
@@ -30,7 +30,7 @@ Estas comprobaciones sí se ejecutaron sobre la interfaz y son reproducibles; co
 | H-06 Área táctil +/− | Ancho calculado | 25 px | 40 px | `getComputedStyle` |
 | H-07 Foco del buscador | Foco visible al tabular al campo | Sin contorno | Contorno 3 px | Inspección |
 | H-08 Estado corrupto | `localStorage` con JSON inválido | Carrito vacío sin aviso | Aviso al iniciar | Prueba automatizada |
-| Regresión | `npm test` | 5 pruebas de dominio | 14/14 (dominio + T1, T2, T3 + persistencia) | `tests/pruebas-automatizadas/` |
+| Regresión | `npm test` | 5 pruebas de dominio | 17/17 (dominio + T1, T2, T3 + cancelar/restaurar + persistencia + rutas de imagen) | `tests/pruebas-automatizadas/` |
 | Responsive | Desbordamiento horizontal a 375 / 768 / 1280 px | — | Ninguno; 2, 2 y 4 columnas | Chromium |
 
 ## Conclusión

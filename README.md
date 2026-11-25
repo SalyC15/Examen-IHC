@@ -35,7 +35,7 @@ Alternativa: `python -m http.server 5173`. El carrito y el último pedido se gua
 ## Pruebas
 
 ```bash
-npm test           # node --test: 14 pruebas (dominio + casos de uso T1, T2, T3 + persistencia)
+npm test           # node --test: 17 pruebas (dominio + casos de uso T1, T2, T3, cancelación + persistencia)
 ```
 
 También se pueden abrir en el navegador: `http://localhost:5173/tests/pruebas-automatizadas/`.
@@ -59,7 +59,7 @@ Cuatro capas en `src/`: **presentation** (pantallas, componentes, accesibilidad)
 - Prototipo local: no procesa pagos, no envía pedidos a la cafetería, no tiene backend, autenticación ni inventario.
 - Los datos persisten solo en el mismo navegador.
 - **Evaluación con usuarios:** `evaluacion/resultados.csv` y `evidencias/observacion.csv` identifican explícitamente como `SIMULACION` los datos de práctica. No representan sesiones reales ni deben presentarse como tales. Las comprobaciones heurísticas, de accesibilidad y técnicas V1/V2 son reproducibles.
-- Con 2 participantes las métricas son descriptivas y no generalizables.
+- P01/P02 son perfiles ficticios; sus métricas solo ilustran cálculos y no representan participantes ni permiten generalizar.
 
 ## Evidencias y documentación
 
@@ -74,3 +74,4 @@ Cuatro capas en `src/`: **presentation** (pantallas, componentes, accesibilidad)
 | 6. Pilotaje y usuarios | [piloto.md](evaluacion/piloto.md), [resultados.csv](evaluacion/resultados.csv), [observacion.csv](evidencias/observacion.csv) |
 | 7. Triangulación y validación | [metricas.md](evaluacion/metricas.md), [hallazgos.md](evaluacion/hallazgos.md), [backlog.md](evaluacion/backlog.md), [validacion-v2.md](evaluacion/validacion-v2.md), [evidencias/](evidencias/README.md) (antes / después) |
 | Créditos de imágenes | [creditos-imagenes.md](docs/creditos-imagenes.md) |
+| Revisión de rúbrica | [revision-rubrica.md](docs/revision-rubrica.md) |

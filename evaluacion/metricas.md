@@ -1,6 +1,6 @@
 # Métricas y reglas de cálculo
 
-`resultados.csv` contiene datos **simulados** porque el equipo pidió completar el escenario de evaluación de forma sintética. P01 y P02 son perfiles ficticios. Estos valores ilustran el cálculo y no son observaciones, tiempos, SUS ni testimonios de personas reales.
+`resultados.csv` contiene datos **simulados** según la indicación docente posterior comunicada por el equipo. P01 y P02 son perfiles ficticios. Estos valores ilustran el cálculo y no son observaciones, tiempos, SUS ni testimonios de personas reales.
 
 - **Éxito por tarea:** `éxitos sin ayuda / intentos × 100`. Marcar éxito solo al observar criterio completo; éxito parcial no cuenta como éxito completo.
 - **Tiempo:** segundos entre terminar lectura de consigna e indicar estado final. Registrar abandonos como no completados; no promediar valores faltantes como cero.

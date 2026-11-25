@@ -1,6 +1,6 @@
 # Registro del piloto P00 — simulación de protocolo
 
-P00 sirve para revisar consignas y hoja de observación. Este ensayo de escritorio es una simulación solicitada por el equipo; no representa a un participante y no se combina con P01/P02.
+P00 sirve para revisar consignas y hoja de observación. Este ensayo de escritorio es una simulación según la indicación docente posterior comunicada por el equipo; no representa a un participante y no se combina con P01/P02.
 
 | Campo | Registro |
 |---|---|
@@ -12,4 +12,4 @@ P00 sirve para revisar consignas y hoja de observación. Este ensayo de escritor
 | Duración aproximada | No medida en participantes; objetivos de tarea son metas |
 | Aprobación para iniciar P01/P02 | Guion listo para simulación; sesiones reales siguen pendientes |
 
-Resultado: protocolo listo para pruebas simuladas. Este registro no es evidencia de pilotaje con participantes.
+Resultado: protocolo revisado para pruebas simuladas. Este registro no es evidencia de pilotaje con participantes.

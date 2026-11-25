@@ -42,3 +42,7 @@ test('entidades rechazan precio, cantidad o pedido inválidos', () => {
   assert.throws(() => crearDetallePedido(latte, 0), ErrorDominio);
   assert.throws(() => crearPedido('CU-1', []), ErrorDominio);
 });
+
+test('la entidad Producto conserva la ruta local de su imagen', () => {
+  assert.equal(crearProducto(products[0]).image, './assets/menu/espresso.jpg');
+});

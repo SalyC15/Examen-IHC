@@ -27,12 +27,13 @@
 ┌──────────────────────────┐
 │ Mi pedido             [×]│
 ├──────────────────────────┤
-│ [☕] Latte       $2,75    │
+│ [foto] Latte    $2,75    │
 │     [−] 1 [+]            │
 │     Quitar               │
 ├──────────────────────────┤
 │ Total             $2,75  │
 │ [ Confirmar pedido → ]   │
+│ Cancelar pedido          │
 │ Pago en cafetería        │
 └──────────────────────────┘
 ```
@@ -51,4 +52,4 @@
 └──────────────────────────┘
 ```
 
-Estos son wireframes conceptuales, no capturas de sesiones ni validación con usuarios.
+Estos son wireframes conceptuales, no capturas de sesiones ni validación con usuarios. “Cancelar pedido” vacía el carrito y ofrece “Deshacer” en el panel.

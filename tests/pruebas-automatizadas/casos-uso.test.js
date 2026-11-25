@@ -50,6 +50,23 @@ test('no se confirma un pedido vacío', () => {
   assert.equal(nuevoServicio().confirmarPedido(), null);
 });
 
+test('cancelar el pedido vacía el carrito y permite restaurar sus cantidades', () => {
+  const servicio = nuevoServicio();
+  servicio.agregarProducto('chai');
+  servicio.agregarProducto('latte');
+  servicio.cambiarCantidad('latte', 1);
+  const cancelado = servicio.cancelarPedido();
+  assert.equal(servicio.resumen().count, 0);
+  servicio.recuperarPedidoCancelado(cancelado);
+  assert.equal(servicio.cantidadDe('chai'), 1);
+  assert.equal(servicio.cantidadDe('latte'), 2);
+  assert.equal(servicio.resumen().total, 8.4);
+});
+
+test('no se puede cancelar un carrito vacío', () => {
+  assert.equal(nuevoServicio().cancelarPedido(), null);
+});
+
 test('deshacer pedido devuelve los productos al carrito', () => {
   const servicio = nuevoServicio();
   servicio.agregarProducto('chai');

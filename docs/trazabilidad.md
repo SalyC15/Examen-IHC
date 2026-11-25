@@ -11,10 +11,12 @@ Requisito → pantalla/componente → caso de uso → prueba automatizada o comp
 | RF5 | Ajustar unidades y calcular total | Mi pedido · `LineaPedido` | `cambiarCantidad` / `cartSummary` | `T2: modificar cantidad a dos…`, `calcula unidades, subtotal y total…` | T2 |
 | RF6 | Quitar y recuperar línea | Mi pedido · `[data-remove]`, `#cart-undo` | `eliminarLinea` / `recuperarLinea` | `T3: eliminar latte, recuperarlo…` | T3 |
 | RF7 | Confirmar pedido (no vacío) y deshacerlo | Confirmación · `#confirmation` | `confirmarPedido` / `deshacerPedido` | `T3…`, `no se confirma un pedido vacío`, `deshacer pedido…` | T3 |
+| RF8 | Cancelar y recuperar pedido completo | Panel · `#cancel-order`, `#cart-undo` | `cancelarPedido` / `recuperarPedidoCancelado` | `cancelar el pedido vacía el carrito…`, `no se puede cancelar un carrito vacío` | Extensión de T3 |
 | RNF1 | Responsive Mobile First | `styles.css` (`min-width`) | — | Comprobación 375/768/1280 px sin desbordamiento | T1–T3 |
 | RNF2 | Teclado y foco visible | Panel, diálogo, buscador | `atraparFoco` | Comprobación manual (accesibilidad.md) | T2, T3 |
 | RNF3 | Mensajes y etiquetas accesibles | `role=status`, `aria-live`, labels | — | Inspección de árbol accesible | T1–T3 |
 | RNF4 | Persistencia y recuperación de errores | — | `pedido-repositorio-local` | `persistencia: …recarga`, `persistencia: …corrupto` | — |
+| RNF5 | Carga local sin backend ni imágenes remotas | Catálogo e `assets/menu/` | Servidor estático | Revisar rutas locales y carga estática | T1 |
 
 ## Problema → corrección → resultado
 

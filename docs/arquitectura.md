@@ -13,12 +13,13 @@ src/
 │                                   LineaPedido, ResultadosVacios, atraparFoco
 ├── application/                    Aplicación (casos de uso)
 │   └── pedido-servicio.js          buscarProductos, agregarProducto, cambiarCantidad,
-│                                   eliminarLinea, recuperarLinea, confirmarPedido, deshacerPedido
+│                                   eliminarLinea, recuperarLinea, cancelarPedido, recuperarPedidoCancelado,
+│                                   confirmarPedido, deshacerPedido
 ├── domain/                         Dominio
 │   ├── entidades.js                Producto, DetallePedido, Pedido + invariantes
 │   └── reglas.js                   normalize, filterProducts, cartSummary, changeQuantity, …
 └── infrastructure/                 Infraestructura
-    ├── catalogo-datos.js           Datos del catálogo
+    ├── catalogo-datos.js           Datos del catálogo y rutas de assets/menu/*.jpg
     ├── catalogo-repositorio.js     Repositorio de productos (listar, buscarPorId, categorias)
     └── pedido-repositorio-local.js Repositorio de carrito/pedido en LocalStorage
 ```
@@ -34,6 +35,7 @@ Presentación ──► Aplicación ──► Dominio ◄── Infraestructura
 - **Presentación** solo conoce el servicio de aplicación (recibido en `iniciarApp(servicio)`); no calcula totales ni lee LocalStorage.
 - **Aplicación** orquesta casos de uso; recibe `catalogo` y `repositorio` por parámetro (inyección de dependencias), por eso las pruebas usan un almacén en memoria.
 - **Dominio** es puro: no importa nada de otras capas, no toca el DOM ni el almacenamiento. Contiene las reglas de negocio:
+  - Producto conserva la ruta local de su imagen para presentación y carrito;
   - el precio de un producto es positivo;
   - la cantidad de un `DetallePedido` es un entero positivo; bajar a 0 retira la línea;
   - el subtotal y el total se calculan desde el precio del catálogo (redondeo a centavos), nunca desde el texto mostrado;
@@ -56,4 +58,4 @@ LocalStorage es una conveniencia del prototipo: puede borrarse y no sincroniza d
 
 ## Pruebas
 
-`npm test` ejecuta `tests/pruebas-automatizadas/` con el runner nativo de Node (sin dependencias): reglas del dominio, entidades y los casos de uso T1, T2 y T3, además de persistencia y estado corrupto. `tests/pruebas-automatizadas/index.html` ejecuta las pruebas de dominio en el navegador.
+`npm test` ejecuta `tests/pruebas-automatizadas/` con el runner nativo de Node (sin dependencias): reglas del dominio, entidades, los casos de uso T1, T2 y T3, cancelación/restauración del pedido, rutas de imágenes y persistencia/estado corrupto. `tests/pruebas-automatizadas/index.html` ejecuta las pruebas de dominio en el navegador.
