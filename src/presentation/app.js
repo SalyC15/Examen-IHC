@@ -112,30 +112,35 @@ export function iniciarApp(servicio) {
     if (removeButton) {
       const eliminada = servicio.eliminarLinea(removeButton.dataset.remove);
       renderCart();
-      if (eliminada) showUndo(eliminada); else $('#close-cart').focus();
+      if (eliminada) showUndo(`${eliminada.product.name} eliminado del pedido. `, `Deshacer: recuperar ${eliminada.product.name}`, () => servicio.recuperarLinea(eliminada), `${eliminada.product.name} recuperado en el pedido.`); else $('#close-cart').focus();
     }
   });
 
   // V2: la recuperación vive dentro del panel modal, así es alcanzable con teclado y no expira.
-  function showUndo(eliminada) {
-    const name = eliminada.product.name;
+  function showUndo(message, accessibleLabel, restore, restoredMessage) {
     const button = document.createElement('button');
     button.type = 'button';
     button.className = 'undo-inline';
     button.textContent = 'Deshacer';
-    button.setAttribute('aria-label', `Deshacer: recuperar ${name}`);
+    button.setAttribute('aria-label', accessibleLabel);
     button.addEventListener('click', () => {
-      servicio.recuperarLinea(eliminada);
+      restore();
       renderCart();
-      ui.undo.replaceChildren(document.createTextNode(`${name} recuperado en el pedido.`));
+      ui.undo.replaceChildren(document.createTextNode(restoredMessage));
       $('#close-cart').focus();
     }, { once: true });
-    ui.undo.replaceChildren(document.createTextNode(`${name} eliminado del pedido. `), button);
+    ui.undo.replaceChildren(document.createTextNode(message), button);
     ui.undo.hidden = false;
     button.focus();
   }
   function clearUndo() { ui.undo.replaceChildren(); ui.undo.hidden = true; }
   $('#checkout').addEventListener('click', checkout);
+  $('#cancel-order').addEventListener('click', () => {
+    const cancelado = servicio.cancelarPedido();
+    if (!cancelado) return;
+    renderCart();
+    showUndo('Pedido cancelado. ', 'Deshacer: recuperar el pedido cancelado', () => servicio.recuperarPedidoCancelado(cancelado), 'Pedido recuperado.');
+  });
   $('#close-confirmation').addEventListener('click', closeConfirmation);
   $('#done').addEventListener('click', closeConfirmation);
   $('#undo-order').addEventListener('click', undoOrder);

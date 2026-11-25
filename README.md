@@ -49,6 +49,7 @@ Cuatro capas en `src/`: **presentation** (pantallas, componentes, accesibilidad)
 - Catálogo por categorías y búsqueda tolerante a tildes y mayúsculas.
 - Añadir productos, modificar cantidades (+/−), subtotales y total calculados en el dominio.
 - Quitar una línea y recuperarla con “Deshacer” dentro del panel (accesible con teclado).
+- Cancelar el pedido completo y recuperarlo desde el mismo panel.
 - Confirmar el pedido (no se permite vacío) con número y resumen; deshacer la confirmación.
 - Mobile First (375 / 768 / 1280 px), HTML semántico, navegación por teclado, foco visible, contraste AA y mensajes anunciados.
 - Persistencia en LocalStorage con aviso si el estado guardado está dañado.
@@ -57,7 +58,7 @@ Cuatro capas en `src/`: **presentation** (pantallas, componentes, accesibilidad)
 
 - Prototipo local: no procesa pagos, no envía pedidos a la cafetería, no tiene backend, autenticación ni inventario.
 - Los datos persisten solo en el mismo navegador.
-- **Evaluación con usuarios:** `evaluacion/resultados.csv` y `evidencias/observacion.csv` contienen filas marcadas `SIMULACION`. La rúbrica no acepta resultados simulados; deben sustituirse por sesiones P01/P02 reales con consentimiento antes de la entrega. Las comprobaciones heurísticas, de accesibilidad y técnicas V1/V2 sí son reales y reproducibles.
+- **Evaluación con usuarios:** `evaluacion/resultados.csv` y `evidencias/observacion.csv` identifican explícitamente como `SIMULACION` los datos de práctica. No representan sesiones reales ni deben presentarse como tales. Las comprobaciones heurísticas, de accesibilidad y técnicas V1/V2 son reproducibles.
 - Con 2 participantes las métricas son descriptivas y no generalizables.
 
 ## Evidencias y documentación
@@ -72,3 +73,4 @@ Cuatro capas en `src/`: **presentation** (pantallas, componentes, accesibilidad)
 | 5. Heurística y accesibilidad | [heuristicas.md](evaluacion/heuristicas.md), [recorrido-cognitivo.md](evaluacion/recorrido-cognitivo.md), [accesibilidad.md](evaluacion/accesibilidad.md) |
 | 6. Pilotaje y usuarios | [piloto.md](evaluacion/piloto.md), [resultados.csv](evaluacion/resultados.csv), [observacion.csv](evidencias/observacion.csv) |
 | 7. Triangulación y validación | [metricas.md](evaluacion/metricas.md), [hallazgos.md](evaluacion/hallazgos.md), [backlog.md](evaluacion/backlog.md), [validacion-v2.md](evaluacion/validacion-v2.md), [evidencias/](evidencias/README.md) (antes / después) |
+| Créditos de imágenes | [creditos-imagenes.md](docs/creditos-imagenes.md) |

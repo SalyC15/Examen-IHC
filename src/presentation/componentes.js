@@ -12,8 +12,9 @@ export function TarjetaProducto(producto) {
   const nombre = escapar(producto.name);
   return `
     <article class="product-card">
-      <div class="product-image tone-${producto.tone}" role="img" aria-label="${nombre}">
-        ${producto.tag ? `<span class="product-tag">${escapar(producto.tag)}</span>` : ''}<span class="food" aria-hidden="true">${producto.emoji}</span>
+      <div class="product-image tone-${producto.tone}">
+        <img src="${escapar(producto.image)}" alt="${nombre}" loading="lazy" decoding="async">
+        ${producto.tag ? `<span class="product-tag">${escapar(producto.tag)}</span>` : ''}
       </div>
       <div class="product-info"><div class="product-title-row"><h3>${nombre}</h3><span class="price">${formatearPrecio(producto.price)}</span></div>
         <p class="product-description">${escapar(producto.description)}</p>
@@ -28,7 +29,7 @@ export function ResultadosVacios() {
 export function LineaPedido({ product, quantity, subtotal }) {
   const nombre = escapar(product.name);
   return `
-    <article class="cart-line"><div class="cart-thumb" aria-hidden="true">${product.emoji}</div><div>
+    <article class="cart-line"><img class="cart-thumb" src="${escapar(product.image)}" alt="" loading="lazy" decoding="async"><div>
       <p class="cart-line-name">${nombre}</p><span class="cart-line-price">${formatearPrecio(product.price)} c/u</span>
       <div class="quantity-controls" role="group" aria-label="Cantidad de ${nombre}">
         <button type="button" data-quantity="${product.id}" data-delta="-1" aria-label="Reducir ${nombre}">−</button>

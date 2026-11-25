@@ -49,6 +49,23 @@ export function crearPedidoServicio({ catalogo, repositorio, generarId = () => `
       return this.resumen();
     },
 
+    /** CU8: cancelar todo el pedido actual; devuelve una copia para deshacer la acción. */
+    cancelarPedido() {
+      if (!Object.keys(estado.cart).length) return null;
+      const cancelado = { ...estado.cart };
+      estado.cart = {};
+      persistir();
+      return cancelado;
+    },
+
+    /** Recupera el carrito completo cancelado mientras la acción siga disponible en la interfaz. */
+    recuperarPedidoCancelado(cancelado) {
+      if (!cancelado || typeof cancelado !== 'object') return this.resumen();
+      estado.cart = { ...cancelado };
+      persistir();
+      return this.resumen();
+    },
+
     /** CU6: confirmar el pedido. Regla: no se confirma un pedido vacío. */
     confirmarPedido() {
       const { lines } = this.resumen();

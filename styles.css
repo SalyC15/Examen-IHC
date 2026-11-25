@@ -317,34 +317,14 @@ nav a:hover,.text-link:hover {
   overflow: hidden;
   background: #eee5d7;
 }
-.product-image:before,.product-image:after {
-  content: '';
-  position: absolute;
-  border-radius: 50%;
-  background: #fff5;
-  width: 170px;
-  height: 170px;
-  top: -60px;
-  right: -40px;
+.product-image>img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .3s ease;
 }
-.product-image:after {
-  width: 105px;
-  height: 105px;
-  top: auto;
-  bottom: -45px;
-  right: auto;
-  left: -20px;
-  background: #29453417;
-}
-.product-image .food {
-  font-size: 4.2rem;
-  position: relative;
-  z-index: 1;
-  filter: drop-shadow(0 8px 5px #32251e28);
-  transition: transform .2s;
-}
-.product-card:hover .food {
-  transform: translateY(-5px) rotate(-4deg);
+.product-card:hover .product-image>img {
+  transform: scale(1.04);
 }
 .tone-latte,.tone-cappuccino {
   background: #e8dfd1;
@@ -532,11 +512,10 @@ nav a:hover,.text-link:hover {
 .cart-thumb {
   width: 52px;
   height: 52px;
-  display: grid;
-  place-items: center;
+  display: block;
+  object-fit: cover;
   border-radius: 3px;
   background: #ece5d9;
-  font-size: 1.8rem;
 }
 .cart-line-name {
   font-size: .82rem;
@@ -619,6 +598,12 @@ nav a:hover,.text-link:hover {
   color: var(--muted);
   font-size: .67rem;
   margin: 12px 0;
+}
+.cancel-order {
+  display: block;
+  margin: 4px auto 0;
+  min-height: 40px;
+  color: #8b4936;
 }
 .toast {
   position: fixed;
@@ -849,9 +834,6 @@ nav a:hover,.text-link:hover {
   }
   .product-image {
     height: 195px;
-  }
-  .product-image .food {
-    font-size: 5.25rem;
   }
   .product-title-row {
     align-items: baseline;
