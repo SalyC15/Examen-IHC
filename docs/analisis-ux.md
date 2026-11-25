@@ -46,3 +46,12 @@ Hipótesis a validar, en escala de -2 (frustración) a +2 (satisfacción): la ex
 | Búsqueda exacta frágil | Flexibilidad y eficiencia | Búsqueda ignora tildes y mayúsculas | Probar consulta sin tilde |
 | Error de búsqueda parece falta de catálogo | Ayuda ante errores | Estado vacío con acción de limpiar | Observar recuperación |
 | Confirmar parece cobrar en línea | Correspondencia con mundo real | Aviso visible: pago en cafetería | Preguntar interpretación |
+
+## Principios Gestalt en la interfaz
+
+- **Proximidad:** nombre, precio, descripción y acción aparecen juntos en cada tarjeta; se facilita reconocer que pertenecen al mismo producto.
+- **Región común y semejanza:** los filtros activos comparten tratamiento visual; las líneas del pedido quedan agrupadas dentro de un mismo panel.
+- **Figura-fondo:** panel y diálogo destacan sobre un fondo oscurecido, dando prioridad a la tarea modal.
+- **Continuidad:** filtros en una fila y tarjetas en una cuadrícula sugieren un recorrido de exploración consistente.
+
+Son decisiones de composición a validar con participantes; no prueban por sí solas comprensión.
