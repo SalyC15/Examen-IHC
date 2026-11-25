@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173b32">
+  <meta name="description" content="Explora el menú de CaféU y prepara tu pedido.">
+  <title>CaféU — Café de campus</title>
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="src/app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+  <header class="site-header">
+    <a class="brand" href="#inicio" aria-label="CaféU, inicio"><span class="brand-mark" aria-hidden="true">☕</span><span>Café<span class="brand-u">U</span></span></a>
+    <nav aria-label="Principal"><a href="#menu">Menú</a><a href="#nosotros">Nuestra cafetería</a></nav>
+    <button class="cart-trigger" type="button" aria-label="Ver pedido, 0 productos" aria-controls="cart-panel">Mi pedido <span id="cart-count" class="cart-count">0</span></button>
+  </header>
+  <main id="main">
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <div class="hero-copy"><p class="eyebrow">Tu pausa en el campus</p><h1 id="hero-title">Un buen día<br>empieza aquí.</h1><p>Café recién hecho, algo rico y un momento para ti.</p><a class="button button-light" href="#menu">Explorar el menú <span aria-hidden="true">↓</span></a></div>
+      <div class="hero-art" aria-hidden="true"><div class="sun"></div><div class="cup">☕</div><span class="art-label">HECHO CON CALMA<br>EN EL CAMPUS</span></div>
+      <div class="hero-note"><span>01</span><span>PAUSA<br>UNIVERSITARIA</span></div>
+    </section>
+    <section class="menu-section section-wrap" id="menu" aria-labelledby="menu-title">
+      <div class="section-heading"><div><p class="eyebrow">Algo para cada antojo</p><h2 id="menu-title">Nuestro menú</h2></div><p class="menu-intro">Preparado al momento, para acompañarte entre clases.</p></div>
+      <div class="menu-tools"><div class="categories" role="group" aria-label="Filtrar por categoría" id="categories"></div><label class="search-box"><span class="search-icon" aria-hidden="true">⌕</span><span class="visually-hidden">Buscar productos</span><input id="search" type="search" placeholder="Busca algo rico…" autocomplete="off"></label></div>
+      <p id="results-label" class="results-label" aria-live="polite"></p>
+      <div id="product-grid" class="product-grid"></div>
+    </section>
+    <section id="nosotros" class="about-section"><div class="about-mark" aria-hidden="true">C<span>U</span></div><div><p class="eyebrow">Un rincón para recargar</p><h2>Entre una clase<br>y la siguiente.</h2><p>Tu cafetería de campus: sabores familiares, ingredientes ricos y un espacio para encontrarnos.</p></div><a href="#menu" class="text-link">Ver lo que preparamos <span aria-hidden="true">↗</span></a></section>
+  </main>
+  <footer class="site-footer"><a class="brand brand-footer" href="#inicio">☕ CaféU</a><span>Una pausa bien merecida.</span><span>Hecho para la vida universitaria.</span></footer>
+  <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+  <div id="cart-backdrop" class="backdrop" hidden></div>
+  <aside id="cart-panel" class="cart-panel" aria-labelledby="cart-title" aria-modal="true" role="dialog" aria-hidden="true" inert>
+    <div class="cart-header"><div><p class="eyebrow">Tu selección</p><h2 id="cart-title">Mi pedido</h2></div><button id="close-cart" class="icon-button" type="button" aria-label="Cerrar pedido">×</button></div>
+    <div id="cart-items" class="cart-items"></div>
+    <div id="cart-empty" class="cart-empty"><span aria-hidden="true">🥐</span><p>Tu pedido está esperando algo rico.</p><button id="browse-menu" class="text-link" type="button">Explorar el menú ↗</button></div>
+    <div id="cart-summary" class="cart-summary" hidden><div class="total-row"><span>Total</span><strong id="cart-total">$0,00</strong></div><button id="checkout" class="button button-dark button-full" type="button">Confirmar pedido <span aria-hidden="true">→</span></button><p class="checkout-note">El pago se realiza en cafetería.</p></div>
+  </aside>
+  <div id="confirmation-backdrop" class="backdrop" hidden></div>
+  <section id="confirmation" class="confirmation" role="dialog" aria-modal="true" aria-labelledby="confirmation-title" aria-hidden="true" inert>
+    <button id="close-confirmation" class="icon-button confirmation-close" type="button" aria-label="Cerrar confirmación">×</button>
+    <span class="confirmation-icon" aria-hidden="true">✓</span><p class="eyebrow">¡Listo!</p><h2 id="confirmation-title">Tu pedido está confirmado.</h2><p id="confirmation-details"></p><button id="done" class="button button-dark button-full" type="button">Volver al menú</button><button id="undo-order" class="text-link undo-link" type="button">Deshacer pedido</button>
+  </section>
+</body>
+</html>
